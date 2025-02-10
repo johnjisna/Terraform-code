@@ -1,0 +1,6 @@
+acm_certificate_arn  = ""
+custom_domain_name   = ""
+policy_name = "s3-iam-user-policy-123"
+iam_user_name = "s3-iam-user-123"
+policy_type = "public_iam"
+bucket_name = "my-tf-test--first-bucket123"
