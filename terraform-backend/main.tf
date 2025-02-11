@@ -34,6 +34,7 @@ module "iam" {
   iam_user_name = var.iam_user_name
   iam_role_name   = var.iam_role_name
   trusted_services = var.trusted_services
+  create_role    = var.create_role
   iam_policies = {
     "test-jenkins-user-policy"   = "policies/test-jenkins-user-policy.json",
     "test-secret-manager-policy" = "policies/test-secret-manager-policy.json"
