@@ -34,5 +34,11 @@ variable "bucket_name" {
   default = "null"
 }
 
+variable "create_role" {
+  description = "Set to true to create an IAM role and attach policies to it."
+  type        = bool
+  default     = false
+}
+
 
 
