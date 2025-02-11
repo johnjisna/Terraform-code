@@ -1,20 +1,14 @@
 output "iam_user_name" {
-  description = "The IAM user name"
+  description = "The IAM user name."
   value       = aws_iam_user.user.name
 }
 
-output "policy_arns" {
-  description = "The ARNs of the attached policies"
-  value       = [for policy in aws_iam_policy.policies : policy.arn]
+output "iam_policy_arns" {
+  description = "A map of policy names to their ARNs."
+  value       = { for k, v in aws_iam_policy.policies : k => v.arn }
 }
 
-output "iam_user_arn" {
-  description = "IAM User ARN"
-  value       = aws_iam_user.user.arn
+output "iam_role_name" {
+  description = "The IAM role name if created; otherwise an empty string."
+  value       = var.create_role ? aws_iam_role.role[0].name : ""
 }
-
-output "iam_role_arn" {
-  description = "ARN of the created IAM role"
-  value       = aws_iam_role.ecr_read.arn
-}
-
