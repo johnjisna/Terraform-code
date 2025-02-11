@@ -20,9 +20,9 @@ module "cdn" {
 module "iam" {
   source = "./iam"
   iam_user_name = var.iam_user_name
+  create_role    = var.create_role
   iam_policies  = {
   "s3_cdn" = "policies/s3_cdn_policy.json"
 }
-
   
 }
